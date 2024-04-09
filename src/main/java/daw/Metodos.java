@@ -34,7 +34,7 @@ public class Metodos {
     public static Map<String, Double> mapEstacion(List<Estaciones> lista) {
         Map<String, Double> mapLista = new TreeMap();
         for (Estaciones e : lista) {
-           mapLista.put(e.estacionMeteorologica(), e.precipitacion());
+            mapLista.put(e.estacionMeteorologica(), e.precipitacion());
         }
         return mapLista;
     }

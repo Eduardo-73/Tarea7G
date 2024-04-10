@@ -37,5 +37,12 @@ public class Metodos {
             mapLista.put(e.estacionMeteorologica(), e.precipitacion());
         }
         return mapLista;
+    } 
+    
+    public static void escribirJSON(Map<String, Double> map) throws IOException{
+        ObjectMapper mapeador = new ObjectMapper();
+        mapeador.registerModule(new JavaTimeModule());
+        mapeador.configure(SerializationFeature.INDENT_OUTPUT, true);
+        mapeador.writeValue(new File("mapJSON.json"), map);
     }
 }
